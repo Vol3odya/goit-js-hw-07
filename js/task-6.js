@@ -44,25 +44,25 @@ button[0].addEventListener('click', createBoxes);
 function createBoxes(amount) {
   destroyBoxes();
   amount = input.valueAsNumber;
-  if (amount > 100 || amount < 1)
-    return;
-  boxes.style.borderRadius = '8px';
-  boxes.style.padding = '32px';
-  boxes.style.maxWidth = '1084px';
-  boxes.style.width = 64 + 44 * (amount-1) + (30 + 5 * (amount-1)) * amount + 'px';
-  //boxes.style.height = '134px';
-  boxes.style.background = '#f6f6fe';
-  boxes.style.display = 'flex';
-  boxes.style.flexWrap = 'wrap';
-  boxes.style.gap = '44px';
-  for (let i = 0; i <amount; i+=1) {
-    let div = document.createElement('div');
-    const qaz = 30 + i * 10 + 'px';
-    div.style.width = qaz;
-    div.style.height = qaz;
-    div.style.background = getRandomHexColor();
-    boxes.append(div);
-    //console.log(qaz);
+  if (amount < 100 || amount > 1) {
+    boxes.style.borderRadius = '8px';
+    boxes.style.padding = '32px';
+    boxes.style.maxWidth = '1084px';
+    boxes.style.width = 64 + 44 * (amount-1) + (30 + 5 * (amount-1)) * amount + 'px';
+    //boxes.style.height = '134px';
+    boxes.style.background = '#f6f6fe';
+    boxes.style.display = 'flex';
+    boxes.style.flexWrap = 'wrap';
+    boxes.style.gap = '44px';
+    for (let i = 0; i <amount; i+=1) {
+      let div = document.createElement('div');
+      const qaz = 30 + i * 10 + 'px';
+      div.style.width = qaz;
+      div.style.height = qaz;
+      div.style.background = getRandomHexColor();
+      boxes.append(div);
+      //console.log(qaz);
+    }    
   }
   //console.log(amount);
 };

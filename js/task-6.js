@@ -43,7 +43,7 @@ button[1].style.background = '#ff4e4e';
 button[0].addEventListener('click', createBoxes);
 function createBoxes(amount) {
   destroyBoxes();
-  amount = input.valueAsNumber;
+  amount = Math.round(input.valueAsNumber);
   if (amount < 101 && amount > 0) {
     boxes.style.borderRadius = '8px';
     boxes.style.padding = '32px';

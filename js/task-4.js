@@ -38,14 +38,14 @@ button.style.border = '#fff';
 form.addEventListener('submit', handler);
 function handler(event) {
     event.preventDefault();
+    const { email, password } = event.currentTarget.elements;
+    if (email.value.trim() == '' || password.value.trim() == '') {
+        window.alert('All form fields must be filled in')
+        return;
+    }
     const formData = new FormData(event.currentTarget);
     const data = {};
     formData.forEach((value, key) => data[key] = value.trim());
-    for ( let key in data) {
-        if (data[key] == '') {
-            window.alert('All form fields must be filled in')
-        }
-    };
     console.log(data);
     form.reset();
 };

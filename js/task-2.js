@@ -36,15 +36,16 @@ parent.style.display = 'flex';
 parent.style.flexWrap = 'wrap';
 parent.style.margin = '0 auto';
 parent.style.gap = '48px 24px';
-
-for (let i = 0; i <6; i+=1) {
-  let li = document.createElement('li');
-  let img = document.createElement('img');
-  img.src = images[i].url;
-  img.alt = images[i].alt;
-  img.style.width = ('360px');
-  img.style.height = ('300px');
-  //li.style.display = 'flex';
-  li.append(img);
-	parent.append(li);
+let rez = '';
+for (let i = 0; i < 6; i += 1) {
+  rez += '<li><img src="' + images[i].url + '" alt="' + images[i].alt + '" width="360" height="300" ></li> ';
+  //let li = document.createElement('li');
+  //let img = document.createElement('img');
+  //img.src = images[i].url;
+  //img.alt = images[i].alt;
+  //img.style.width = ('360px');
+  //img.style.height = ('300px');
+  //li.append(img);
+	//parent.append(li);
 }
+parent.insertAdjacentHTML("beforeend", rez);

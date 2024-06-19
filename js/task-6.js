@@ -49,20 +49,22 @@ function createBoxes(amount) {
     boxes.style.padding = '32px';
     boxes.style.maxWidth = '1084px';
     boxes.style.width = 64 + 44 * (amount-1) + (30 + 5 * (amount-1)) * amount + 'px';
-    //boxes.style.height = '134px';
     boxes.style.background = '#f6f6fe';
     boxes.style.display = 'flex';
     boxes.style.flexWrap = 'wrap';
     boxes.style.gap = '44px';
-    for (let i = 0; i <amount; i+=1) {
-      let div = document.createElement('div');
+    let rez = '';
+    for (let i = 0; i < amount; i += 1) {
       const qaz = 30 + i * 10 + 'px';
-      div.style.width = qaz;
-      div.style.height = qaz;
-      div.style.background = getRandomHexColor();
-      boxes.append(div);
+      rez += '<div style="width: ' + qaz + '; height: ' + qaz + '; background: ' + getRandomHexColor() + ';"></div> ';
+      //let div = document.createElement('div');
+      //div.style.width = qaz;
+      //div.style.height = qaz;
+      //div.style.background = getRandomHexColor();
+      //boxes.append(div);
       //console.log(qaz);
     }    
+    boxes.insertAdjacentHTML("beforeend", rez);
   }
   //console.log(amount);
 };
